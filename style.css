@@ -10,6 +10,17 @@
 
   } */
 
+  /* -------------------------------------- Font ---------------------------------------- */
+
+.subheading {
+  font-size: medium;
+  text-align: center;
+  
+}
+.center {
+  text-align: center;
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -46,7 +57,7 @@ header h1 {
   display: flex;
   flex-direction: row;
   background-color: rgba(0, 0, 0, 0.95);
-  margin: 3vh auto;
+  margin: 3vh auto 0 auto;
   width: 70%;
   padding: 6px 0 6px 0;
   max-width: 900px;
@@ -56,7 +67,9 @@ header h1 {
   z-index: 1;
   position: relative;
   box-shadow: 0 0 20px #b700ff;
-  margin-top: 0;
+  overflow: hidden;
+  /* margin-top: 0; */
+  /* max-height: 100%; */
 }
 
 .sidebar {
@@ -75,8 +88,12 @@ header h1 {
   border-radius: 8px;
   color: #f0f0f0;
 
+  max-height: 75vh;
+
   overflow-y: auto;
-  max-height: 100%;
+  overflow-x: hidden;
+  /* max-height: 75vh; */
+  /* max-height: 100%; */
 }
 
 /* .menu-item {
@@ -143,13 +160,37 @@ h3 {
 /* --------------------------------------------making the tabs--------------------------------------------- */
 
 .menu {
+
+  flex: 1;
   display: flex;
   /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
+
+  direction: rtl;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+  height: 100%;
+  max-width: 250px;
+  box-sizing: border-box;
+
+
+  /* padding-right: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+  max-width: 250px;
+  box-sizing: border-box; */
+
+
   margin: 30px;
-  padding: 10px;
+  padding: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
   width: fit-content;
   margin-top: 10px;
   /* max-width: 1000px;
@@ -158,7 +199,10 @@ h3 {
 }
 
 .menu-item {
-  background-color: #141414;
+
+  direction: rtl;
+
+  background-color: #000000;
   color: #ffffff;
   text-align: left;
   padding: 15px 25px;
@@ -168,7 +212,10 @@ h3 {
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0, 2s ease;
 
-  width: 250px;
+  width: 235px;
+  /*250px; */
+  max-height: 75vh;
+  box-sizing: border-box;
 
 }
 
@@ -196,6 +243,10 @@ h3 {
   display: none;
 }
 
+/* --------------------------Left-Hand Scroll------------------------------- */
+
+
+
 
 /* --------------------------PICTURES------------------------------- */
 
@@ -216,6 +267,10 @@ h3 {
 /* ----------mobile----------- */
 
 @media (max-width: 768px) {
+
+  header {
+    margin-bottom: 10px;
+  }
   .main-container {
     flex-direction: column;
     width: 95%;
@@ -223,6 +278,7 @@ h3 {
     justify-content: center;
     padding: 10px;
     box-sizing: border-box;
+    margin: 20px;
   }
 
   .menu {
@@ -237,6 +293,11 @@ h3 {
     width: 100% !important;
     box-sizing: border-box;
     margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .menu-iten:first-child {
+    margin-top: 15px;
   }
 
   .menu-item {
@@ -244,6 +305,7 @@ h3 {
     max-width: 100%;
     text-align: center;
     margin-bottom: 0.5px;
+    /* margin: 20px; */
     box-sizing: border-box;
   }
 
