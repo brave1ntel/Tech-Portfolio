@@ -408,6 +408,7 @@ body:has(#darkmode-toggle:checked) {
   --panel-2: #121212;
   --panel-3: #b700ff;
 
+
   --text: #f0f0f0;
   --h1: #f0f0f0;
   --link: #b700ff;
@@ -418,7 +419,20 @@ body:has(#darkmode-toggle:checked) {
   --menu-active-bg: #000000;
   --menu-hover-bg: #000000;
   --content-bg: #121212;
+
 }
+body:has(#darkmode-toggle:checked) a {
+  color: #b700ff; /* or any accent that fits your dark theme */
+}
+body:has(#darkmode-toggle:checked) .menu-item a {
+  color: #ffffff;   /* keeps sidebar text white */
+}
+
+
+
+
+
+
 
 /* ---------- (3) Base Layout ---------- */
 
@@ -578,6 +592,11 @@ p { line-height: 1.4; }
   }
 }
 
+/*-----------------------------------------------link color-----------------------------------------------*/
+  a {
+    color: #594741; /* warm brown that matches your palette */
+    text-decoration: underline;
+  }
 /* ---------- Toggle Button ---------- */
 #darkmode-toggle {
   position: absolute;
@@ -619,3 +638,4 @@ p { line-height: 1.4; }
   transform: translateX(30px);
   background: linear-gradient(180deg, #777, #3a3a3a);
 }
+
